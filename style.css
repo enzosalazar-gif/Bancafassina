@@ -730,3 +730,41 @@ h1, h2, h3, h4, .logo-text {
         flex-direction: column;
     }
 }
+.banner-cookies {
+    position: fixed; /* Mantém a barra fixa mesmo ao rolar a página */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 32, 44, 0.95); /* Fundo escuro com leve transparência */
+    color: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Garante que fique sobre todos os outros elementos */
+    font-size: 14px;
+}
+/* Botão de aceite */
+.btn-cookies {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap; /* Impede que o texto do botão quebre em duas linhas */
+    transition: background-color 0.3s ease;
+}
+
+.btn-cookies:hover {
+    background-color: #218838;
+}
+
+/* Classe utilitária para ocultar o banner */
+.oculto {
+    display: none !important;
+
+}  

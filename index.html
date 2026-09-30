@@ -14,7 +14,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div id="banner-cookies" class="banner-cookies">
+    <p>
+        Utilizamos cookies para personalizar sua experiência. Ao continuar navegando, você concorda com a nossa política.
+    </p>
+    <button id="btn-aceitar-cookies" class="btn-cookies">Entendi e Aceito</button>
+</div>  
     <!-- NAVBAR HEADER -->
     <header class="header">
         <div class="container nav-container">
@@ -321,5 +326,29 @@
         </div>
     </footer>
 
+    <script>
+    // 1. Captura os elementos da tela pelos IDs
+    const bannerCookies = document.getElementById('banner-cookies');
+    const btnAceitar = document.getElementById('btn-aceitar-cookies');
+
+    // 2. Verifica se o usuário já aceitou os cookies anteriormente
+    // O localStorage guarda informações no navegador mesmo se fechar a aba
+    const cookiesAceitos = localStorage.getItem('cookiesAceitos');
+
+    if (cookiesAceitos === 'sim') {
+        // Se já aceitou antes, esconde o banner imediatamente
+        bannerCookies.classList.add('oculto');
+    }
+
+    // 3. Adiciona o evento de clique no botão "Entendi e Aceito"
+    btnAceitar.addEventListener('click', () => {
+        // Salva a decisão do usuário no navegador
+        localStorage.setItem('cookiesAceitos', 'sim');
+       
+        // Esconde o banner da tela
+        bannerCookies.classList.add('oculto');
+    });
+
+</script>
 </body>
 </html>

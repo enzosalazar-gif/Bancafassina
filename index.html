@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="banner-cookies" class="banner-cookies">
-    <p>
-        Utilizamos cookies para personalizar sua experiência. Ao continuar navegando, você concorda com a nossa política.
-    </p>
-    <button id="btn-aceitar-cookies" class="btn-cookies">Entendi e Aceito</button>
-</div>  
+    <!-- BANNER DE COOKIES -->
+    <div id="banner-cookies" class="banner-cookies">
+        <p>
+            Utilizamos cookies para personalizar sua experiência. Ao continuar navegando, você concorda com a nossa política.
+        </p>
+        <button id="btn-aceitar-cookies" class="btn-cookies">Entendi e Aceito</button>
+    </div> 
+
     <!-- NAVBAR HEADER -->
     <header class="header">
         <div class="container nav-container">
@@ -30,6 +32,7 @@
             
             <nav class="nav-menu">
                 <a href="#inicio">Início</a>
+                <a href="#destaques">Destaques</a>
                 <a href="#sobre">Sobre Nós</a>
                 <a href="#servicos">Atacado & Varejo</a>
                 <a href="#galeria">Frutas do Dia</a>
@@ -77,6 +80,27 @@
                                 <span>Chegando Pela Manhã</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CARROSSEL DE DESTAQUES -->
+        <section id="destaques" class="carousel-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Em Destaque</span>
+                    <h2>Ofertas e Seleções da Semana</h2>
+                    <p class="section-desc">Passe o mouse sobre o carrossel para pausar a exibição.</p>
+                </div>
+
+                <!-- COMPONENTE CARROSSEL -->
+                <div class="slider-wrapper">
+                    <div class="slider-track">
+                        <img class="slide-img" src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80" alt="Banca de Frutas Selecionadas">
+                        <img class="slide-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Variedade de Frutas Frescas">
+                        <img class="slide-img" src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=800&q=80" alt="Cestas de Frutas Especiais">
+                        <img class="slide-img" src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=800&q=80" alt="Mangas Palmer Especiais">
                     </div>
                 </div>
             </div>
@@ -154,65 +178,188 @@
             </div>
         </section>
 
-        <!-- GALERIA DE FRUTAS DO DIA -->
+        <!-- GALERIA DE FRUTAS COM FLIP CARDS 3D E LIGHTBOX 100% CSS -->
         <section id="galeria" class="gallery-section">
             <div class="container">
                 <div class="section-header">
                     <span class="sub-title">Vitrine Digital</span>
                     <h2>Frutas em Destaque</h2>
+                    <p class="section-desc">Passe o mouse no card para ver detalhes ou clique em <strong>Ampliar Foto</strong> para ver em alta resolução.</p>
                 </div>
 
                 <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=600&q=80" alt="Morangos Frescos">
-                        <span class="gallery-tag tag-green">Chegou Hoje</span>
-                        <div class="gallery-overlay">
-                            <h4>Morangos Selecionados</h4>
+                    <!-- CARD FLIP 1 -->
+                    <div class="card-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=600&q=80" alt="Morangos Frescos">
+                                <span class="gallery-tag tag-green">Chegou Hoje</span>
+                                <div class="card-front-title">Morangos Selecionados</div>
+                            </div>
+                            <div class="card-back">
+                                <h3>Morangos Premium</h3>
+                                <p>Morangos suculentos e doces, colhidos no ponto certo. Ideais para sobremesas e consumo natural.</p>
+                                <div class="card-actions">
+                                    <a href="#img1" class="btn btn-outline-light"><i class="fa-solid fa-expand"></i> Ampliar Foto</a>
+                                    <a href="https://wa.me/5519999999999?text=Quero%20morangos" class="btn btn-cta" target="_blank"><i class="fa-brands fa-whatsapp"></i> Pedir no Whats</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=600&q=80" alt="Uvas de Mesa">
-                        <span class="gallery-tag tag-red">Ideal para Festas</span>
-                        <div class="gallery-overlay">
-                            <h4>Uvas Doces e Sem Semente</h4>
+                    <!-- CARD FLIP 2 -->
+                    <div class="card-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=600&q=80" alt="Uvas de Mesa">
+                                <span class="gallery-tag tag-red">Ideal para Festas</span>
+                                <div class="card-front-title">Uvas Doces</div>
+                            </div>
+                            <div class="card-back">
+                                <h3>Uvas Sem Semente</h3>
+                                <p>Cachos selecionados, crocantes e extremamente doces. Perfeitos para montar tábuas de frutas.</p>
+                                <div class="card-actions">
+                                    <a href="#img2" class="btn btn-outline-light"><i class="fa-solid fa-expand"></i> Ampliar Foto</a>
+                                    <a href="https://wa.me/5519999999999?text=Quero%20uvas" class="btn btn-cta" target="_blank"><i class="fa-brands fa-whatsapp"></i> Pedir no Whats</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80" alt="Mangas Palmer">
-                        <span class="gallery-tag tag-orange">Opção em Caixas</span>
-                        <div class="gallery-overlay">
-                            <h4>Mangas Palmer Extra</h4>
+                    <!-- CARD FLIP 3 -->
+                    <div class="card-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80" alt="Mangas Palmer">
+                                <span class="gallery-tag tag-orange">Opção em Caixas</span>
+                                <div class="card-front-title">Mangas Palmer Extra</div>
+                            </div>
+                            <div class="card-back">
+                                <h3>Mangas Palmer</h3>
+                                <p>Mangas sem fiapo, muito macias e bastante doces. Disponíveis por quilo ou caixa fechada.</p>
+                                <div class="card-actions">
+                                    <a href="#img3" class="btn btn-outline-light"><i class="fa-solid fa-expand"></i> Ampliar Foto</a>
+                                    <a href="https://wa.me/5519999999999?text=Quero%20mangas" class="btn btn-cta" target="_blank"><i class="fa-brands fa-whatsapp"></i> Pedir no Whats</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80" alt="Figos Especiais">
-                        <span class="gallery-tag tag-purple">Especialidade</span>
-                        <div class="gallery-overlay">
-                            <h4>Figos Roxos Premium</h4>
+                    <!-- CARD FLIP 4 -->
+                    <div class="card-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80" alt="Figos Especiais">
+                                <span class="gallery-tag tag-purple">Especialidade</span>
+                                <div class="card-front-title">Figos Roxos Premium</div>
+                            </div>
+                            <div class="card-back">
+                                <h3>Figos de Valinhos</h3>
+                                <p>A verdadeira especialidade da nossa região! Figos graúdos, frescos e colhidos diariamente.</p>
+                                <div class="card-actions">
+                                    <a href="#img4" class="btn btn-outline-light"><i class="fa-solid fa-expand"></i> Ampliar Foto</a>
+                                    <a href="https://wa.me/5519999999999?text=Quero%20figos" class="btn btn-cta" target="_blank"><i class="fa-brands fa-whatsapp"></i> Pedir no Whats</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1587049352847-4a222e784d38?auto=format&fit=crop&w=600&q=80" alt="Melancias Doce">
-                        <span class="gallery-tag tag-green">Direto do Produtor</span>
-                        <div class="gallery-overlay">
-                            <h4>Melancias Doces e Inteiras</h4>
+                    <!-- CARD FLIP 5 (IMAGEM DA MELANCIA CORRIGIDA E ATUALIZADA) -->
+                    <div class="card-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?auto=format&fit=crop&w=600&q=80" alt="Melancias Doces">
+                                <span class="gallery-tag tag-green">Direto do Produtor</span>
+                                <div class="card-front-title">Melancias Inteiras</div>
+                            </div>
+                            <div class="card-back">
+                                <h3>Melancias Selecionadas</h3>
+                                <p>Frutas bem vermelhas e muito suculentas. Entregamos inteiras ou cortadas em pedaços sob encomenda.</p>
+                                <div class="card-actions">
+                                    <a href="#img5" class="btn btn-outline-light"><i class="fa-solid fa-expand"></i> Ampliar Foto</a>
+                                    <a href="https://wa.me/5519999999999?text=Quero%20melancia" class="btn btn-cta" target="_blank"><i class="fa-brands fa-whatsapp"></i> Pedir no Whats</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=600&q=80" alt="Cestas Especiais">
-                        <span class="gallery-tag tag-red">Sob Encomenda</span>
-                        <div class="gallery-overlay">
-                            <h4>Cestas de Frutas Personalizadas</h4>
+                    <!-- CARD FLIP 6 -->
+                    <div class="card-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=600&q=80" alt="Cestas Especiais">
+                                <span class="gallery-tag tag-red">Sob Encomenda</span>
+                                <div class="card-front-title">Cestas Personalizadas</div>
+                            </div>
+                            <div class="card-back">
+                                <h3>Cestas de Presente</h3>
+                                <p>Montamos cestas com seleção exclusiva de frutas para presentes corporativos ou festas de fim de ano.</p>
+                                <div class="card-actions">
+                                    <a href="#img6" class="btn btn-outline-light"><i class="fa-solid fa-expand"></i> Ampliar Foto</a>
+                                    <a href="https://wa.me/5519999999999?text=Quero%20uma%20cesta" class="btn btn-cta" target="_blank"><i class="fa-brands fa-whatsapp"></i> Pedir no Whats</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ESTRUTURA DOS MODAIS LIGHTBOX (100% CSS VIA :target) -->
+        <div class="lightbox" id="img1">
+            <a href="#galeria" class="lightbox-overlay"></a>
+            <div class="lightbox-content">
+                <a href="#galeria" class="close-btn">&times;</a>
+                <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=1200&q=80" alt="Morangos Selecionados Ampliada">
+                <div class="lightbox-caption">Morangos Selecionados - Caixas e Bandejas Frescas</div>
+            </div>
+        </div>
+
+        <div class="lightbox" id="img2">
+            <a href="#galeria" class="lightbox-overlay"></a>
+            <div class="lightbox-content">
+                <a href="#galeria" class="close-btn">&times;</a>
+                <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=1200&q=80" alt="Uvas Doces Ampliada">
+                <div class="lightbox-caption">Uvas de Mesa Sem Semente - Doces e Crocantes</div>
+            </div>
+        </div>
+
+        <div class="lightbox" id="img3">
+            <a href="#galeria" class="lightbox-overlay"></a>
+            <div class="lightbox-content">
+                <a href="#galeria" class="close-btn">&times;</a>
+                <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=1200&q=80" alt="Mangas Palmer Extra Ampliada">
+                <div class="lightbox-caption">Mangas Palmer Extra - Suculentas e Sem Fiapo</div>
+            </div>
+        </div>
+
+        <div class="lightbox" id="img4">
+            <a href="#galeria" class="lightbox-overlay"></a>
+            <div class="lightbox-content">
+                <a href="#galeria" class="close-btn">&times;</a>
+                <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1200&q=80" alt="Figos Roxos Premium Ampliada">
+                <div class="lightbox-caption">Figos Roxos Premium - Tradicional Colheita de Valinhos</div>
+            </div>
+        </div>
+
+        <!-- LIGHTBOX 5 (IMAGEM DA MELANCIA CORRIGIDA E ATUALIZADA) -->
+        <div class="lightbox" id="img5">
+            <a href="#galeria" class="lightbox-overlay"></a>
+            <div class="lightbox-content">
+                <a href="#galeria" class="close-btn">&times;</a>
+                <img src="https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?auto=format&fit=crop&w=1200&q=80" alt="Melancias Inteiras Ampliada">
+                <div class="lightbox-caption">Melancias Doces - Venda por Quilo ou Unidade Fechada</div>
+            </div>
+        </div>
+
+        <div class="lightbox" id="img6">
+            <a href="#galeria" class="lightbox-overlay"></a>
+            <div class="lightbox-content">
+                <a href="#galeria" class="close-btn">&times;</a>
+                <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=1200&q=80" alt="Cestas Personalizadas Ampliada">
+                <div class="lightbox-caption">Cestas Especiais de Frutas - Montagem Personalizada para Presentes</div>
+            </div>
+        </div>
 
         <!-- CONTATO E RESERVAS -->
         <section id="contato" class="contact-section">
@@ -302,6 +449,7 @@
                 <h4>Navegação</h4>
                 <ul>
                     <li><a href="#inicio">Início</a></li>
+                    <li><a href="#destaques">Destaques</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#servicos">Atacado & Varejo</a></li>
                     <li><a href="#galeria">Frutas do Dia</a></li>
@@ -327,28 +475,30 @@
     </footer>
 
     <script>
-    // 1. Captura os elementos da tela pelos IDs
     const bannerCookies = document.getElementById('banner-cookies');
     const btnAceitar = document.getElementById('btn-aceitar-cookies');
 
-    // 2. Verifica se o usuário já aceitou os cookies anteriormente
-    // O localStorage guarda informações no navegador mesmo se fechar a aba
     const cookiesAceitos = localStorage.getItem('cookiesAceitos');
 
     if (cookiesAceitos === 'sim') {
-        // Se já aceitou antes, esconde o banner imediatamente
         bannerCookies.classList.add('oculto');
     }
 
-    // 3. Adiciona o evento de clique no botão "Entendi e Aceito"
     btnAceitar.addEventListener('click', () => {
-        // Salva a decisão do usuário no navegador
         localStorage.setItem('cookiesAceitos', 'sim');
-       
-        // Esconde o banner da tela
         bannerCookies.classList.add('oculto');
     });
 
-</script>
+    </script>
+
+    <!-- INVOCAR O CHATBOT A PARTIR DE OUTRO FICHEIRO -->
+  <script src="chatbot.js"></script>
+  <script>
+    // Inicializa o chatbot apontando para a sua base de dados extra em JSON
+    initChatbot({
+      jsonUrl: 'minha-base-dados.json'
+    });
+  </script>
+
 </body>
 </html>

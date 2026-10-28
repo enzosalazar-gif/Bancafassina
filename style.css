@@ -1,6 +1,6 @@
 /* ==========================================================================
-   BANCA FASSINA - STYLESHEET
-   Paleta extraída da identidade visual oficial
+   BANCA FASSINA - STYLESHEET OFICIAL INTEGRADO
+   Inclui: Identidade Visual + Seção de Carrossel + Flip Cards 3D + Lightbox CSS
    ========================================================================== */
 
 :root {
@@ -8,7 +8,7 @@
     --bg-card: #FFFFFF;
     
     /* Cores de Marca */
-    --primary-plum: #382043;      /* Roxo escuro da logo */
+    --primary-plum: #382043;      /* Roxo escuro principal */
     --primary-hover: #291632;
     --accent-orange: #FF6B35;     /* Laranja vibrante para CTA */
     --accent-hover: #e05522;
@@ -103,6 +103,19 @@ h1, h2, h3, h4, .logo-text {
     color: #FFFFFF;
 }
 
+.btn-outline-light {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 0.82rem;
+    padding: 8px 16px;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #FFFFFF;
+}
+
 .btn-lg {
     padding: 16px 32px;
     font-size: 1.05rem;
@@ -130,6 +143,12 @@ h1, h2, h3, h4, .logo-text {
 
 .section-header h2 {
     font-size: 2.2rem;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-top: 8px;
 }
 
 /* ==========================================================================
@@ -285,6 +304,7 @@ h1, h2, h3, h4, .logo-text {
     align-items: center;
     gap: 12px;
     box-shadow: var(--shadow-soft);
+    z-index: 10;
 }
 
 .floating-badge i {
@@ -300,6 +320,52 @@ h1, h2, h3, h4, .logo-text {
 .floating-badge span {
     font-size: 0.8rem;
     color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SEÇÃO CARROSSEL AUTOMÁTICO
+   ========================================================================== */
+.carousel-section {
+    padding: 40px 0 80px 0;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hover);
+    border: 8px solid #FFFFFF;
+}
+
+.slider-track {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    animation: autoSlide 12s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+.slider-wrapper:hover .slider-track {
+    animation-play-state: paused;
+}
+
+.slide-img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@keyframes autoSlide {
+    0%, 20% { transform: translateX(0%); }
+    25%, 45% { transform: translateX(-25%); }
+    50%, 70% { transform: translateX(-50%); }
+    75%, 95% { transform: translateX(-75%); }
+    100% { transform: translateX(0%); }
 }
 
 /* ==========================================================================
@@ -444,7 +510,7 @@ h1, h2, h3, h4, .logo-text {
 }
 
 /* ==========================================================================
-   GALERIA DE FRUTAS
+   GALERIA DE FRUTAS - FLIP CARDS 3D
    ========================================================================== */
 .gallery-section {
     padding: 80px 0;
@@ -457,23 +523,61 @@ h1, h2, h3, h4, .logo-text {
     gap: 25px;
 }
 
-.gallery-item {
-    position: relative;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    height: 260px;
-    box-shadow: var(--shadow-soft);
+.card-container {
+    width: 100%;
+    height: 330px;
+    perspective: 1000px;
 }
 
-.gallery-item img {
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+}
+
+.card-container:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* LADO DA FRENTE DO CARD */
+.card-front {
+    background-color: var(--bg-card);
+}
+
+.card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
 }
 
-.gallery-item:hover img {
-    transform: scale(1.05);
+.card-front-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 15px 15px 15px;
+    background: linear-gradient(transparent, rgba(42, 28, 48, 0.88));
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    text-align: left;
 }
 
 .gallery-tag {
@@ -485,6 +589,7 @@ h1, h2, h3, h4, .logo-text {
     font-size: 0.75rem;
     font-weight: 700;
     color: #FFFFFF;
+    z-index: 5;
 }
 
 .tag-green { background-color: var(--badge-green); }
@@ -492,18 +597,125 @@ h1, h2, h3, h4, .logo-text {
 .tag-orange { background-color: var(--badge-orange); }
 .tag-purple { background-color: var(--badge-purple); }
 
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(42, 28, 48, 0.85));
-    padding: 20px 15px 15px 15px;
+/* LADO DE TRÁS DO CARD */
+.card-back {
+    background: linear-gradient(135deg, var(--primary-plum), #291632);
+    border: 2px solid var(--accent-orange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform: rotateY(180deg);
+    color: #FFFFFF;
 }
 
-.gallery-overlay h4 {
+.card-back h3 {
+    font-size: 1.35rem;
     color: #FFFFFF;
-    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.card-back p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 18px;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL (100% CSS)
+   ========================================================================== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(26, 16, 32, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+}
+
+.lightbox:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lightbox:target .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    object-fit: contain;
+    border: 4px solid #FFFFFF;
+}
+
+.lightbox-caption {
+    margin-top: 15px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 18px;
+    border-radius: 30px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    color: #FFFFFF;
+    font-size: 2.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent-orange);
+}
+
+.lightbox-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 /* ==========================================================================
@@ -691,6 +903,46 @@ h1, h2, h3, h4, .logo-text {
 }
 
 /* ==========================================================================
+   COOKIES BANNER
+   ========================================================================== */
+.banner-cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 32, 44, 0.95);
+    color: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-size: 14px;
+}
+
+.btn-cookies {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cookies:hover {
+    background-color: #218838;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* ==========================================================================
    RESPONSIVIDADE (MOBILE & TABLET)
    ========================================================================== */
 @media (max-width: 992px) {
@@ -711,7 +963,7 @@ h1, h2, h3, h4, .logo-text {
 
 @media (max-width: 768px) {
     .nav-menu {
-        display: none; /* Em projetos avançados, pode trocar por menu hambúrguer */
+        display: none;
     }
 
     .hero-content h1 {
@@ -729,42 +981,136 @@ h1, h2, h3, h4, .logo-text {
     .hero-buttons {
         flex-direction: column;
     }
+
+    .slider-wrapper {
+        height: 280px;
+    }
+
+    /* ==========================================================================
+   TELA DE CARREGAMENTO (PRELOADER COM SLIDESHOW DE FRUTAS)
+   ========================================================================== */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
-.banner-cookies {
-    position: fixed; /* Mantém a barra fixa mesmo ao rolar a página */
-    bottom: 0;
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Container do Slideshow de Fundo */
+.preloader-bg-slideshow {
+    position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(26, 32, 44, 0.95); /* Fundo escuro com leve transparência */
-    color: #ffffff;
-    padding: 15px 25px;
+    height: 100%;
+    z-index: 1;
+}
+
+.preloader-bg-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fruitSlideshow 12s infinite;
+}
+
+/* Fotos das Frutas do Próprio Site */
+.preloader-bg-slideshow .slide-1 {
+    background-image: url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=1200&q=80');
+    animation-delay: 0s;
+}
+
+.preloader-bg-slideshow .slide-2 {
+    background-image: url('https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=1200&q=80');
+    animation-delay: 3s;
+}
+
+.preloader-bg-slideshow .slide-3 {
+    background-image: url('https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=1200&q=80');
+    animation-delay: 6s;
+}
+
+.preloader-bg-slideshow .slide-4 {
+    background-image: url('https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1200&q=80');
+    animation-delay: 9s;
+}
+
+@keyframes fruitSlideshow {
+    0% { opacity: 0; transform: scale(1); }
+    10% { opacity: 1; }
+    25% { opacity: 1; }
+    35% { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 0; }
+}
+
+/* Camada Escura com Desfoque sobre as Fotos */
+.preloader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 28, 48, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2;
+}
+
+/* Card do Conteúdo Central */
+.preloader-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #FAF8F5;
+    padding: 30px;
+    background: rgba(56, 32, 67, 0.88);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hover);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    max-width: 320px;
+    width: 90%;
+}
+
+.preloader-logo {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-orange);
+    color: #FFFFFF;
+    border-radius: 50%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 9999; /* Garante que fique sobre todos os outros elementos */
-    font-size: 14px;
-}
-/* Botão de aceite */
-.btn-cookies {
-    background-color: #28a745;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    white-space: nowrap; /* Impede que o texto do botão quebre em duas linhas */
-    transition: background-color 0.3s ease;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 15px auto;
+    animation: pulseLogo 1.8s ease-in-out infinite;
 }
 
-.btn-cookies:hover {
-    background-color: #218838;
+.preloader-content h2 {
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
 }
 
-/* Classe utilitária para ocultar o banner */
-.oculto {
-    display: none !important;
-
-}  
+.preloader-content p {
+    color: rgba(250, 248, 245, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+}

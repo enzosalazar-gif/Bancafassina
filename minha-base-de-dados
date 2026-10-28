@@ -1,0 +1,37 @@
+[
+  {
+    "pergunta": "Qual é o endereço e a localização da Banca Fassina?",
+    "keywords": ["endereco", "localizacao", "onde", "fica", "chegar", "rua", "avenida", "invernada", "valinhos", "bairro", "ponto"],
+    "resposta": "Estamos na **Av. Invernada, 320 - Parque Nova Suíça, Valinhos - SP** (em frente à Faculdade Anhanguera). Temos fácil acesso e estacionamento no local!"
+  },
+  {
+    "pergunta": "Qual é o horário de funcionamento?",
+    "keywords": ["horario", "funcionamento", "horarios", "aberto", "abre", "fecha", "domingo", "sabado", "feriado", "horas"],
+    "resposta": "Atendemos nos seguintes horários:\n- **Segunda a Sábado:** 07:00 às 19:00\n- **Domingos e Feriados:** 07:00 às 13:00"
+  },
+  {
+    "pergunta": "Como faço pedidos e reservas pelo WhatsApp?",
+    "keywords": ["whatsapp", "whats", "zap", "pedir", "reserva", "reservar", "contato", "telefone", "encomenda"],
+    "resposta": "Você pode fazer seu pedido ou tirar dúvidas pelo WhatsApp no número **(19) 99999-9999** ou clicando no botão de reserva no topo do site."
+  },
+  {
+    "pergunta": "Quais frutas vocês vendem e quais são os destaques?",
+    "keywords": ["frutas", "produtos", "especialidade", "figo", "morango", "uva", "manga", "melancia", "destaque", "fresca"],
+    "resposta": "Trabalhamos com morangos selecionados, uvas sem semente, mangas Palmer, melancias e os famosos **Figos Roxos Premium**, a especialidade da nossa região em Valinhos!"
+  },
+  {
+    "pergunta": "Vocês atendem vendas no atacado para empresas?",
+    "keywords": ["atacado", "empresa", "comercio", "mercado", "padaria", "restaurante", "quantidade", "orcamento", "lanchonete"],
+    "resposta": "Sim! Oferecemos fornecimento em quantidade com preços especiais para mercados, padarias, restaurantes e lanchonetes."
+  },
+  {
+    "pergunta": "Vocês montam cestas de presentes para festas ou eventos?",
+    "keywords": ["cesta", "cestas", "presente", "festas", "feriados", "natal", "ano novo", "corporativo", "evento"],
+    "resposta": "Montamos **cestas personalizadas** sob encomenda para presentes corporativos e festas de fim de ano (Natal e Ano Novo)[cite: 1]."
+  },
+  {
+    "pergunta": "Como funciona o serviço Encomende e Retire?",
+    "keywords": ["retire", "retirar", "retirada", "sacola", "praticidade", "encomende", "buscar"],
+    "resposta": "É super simples: faça seu pedido via WhatsApp e passe na banca apenas para retirar sua sacola pronta, sem filas[cite: 1]!"
+  }
+]
